@@ -1,3 +1,6 @@
+offline_indicator_icon:
+  type: string
+  default: "power-off"
 offline_indicator_background_color:
   type: string
   default: "var(--danger-low)"
