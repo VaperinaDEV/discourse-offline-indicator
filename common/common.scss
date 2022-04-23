@@ -1,0 +1,26 @@
+.offline-indicator {
+  display: none;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  text-align: center;
+  width: #{$offline_indicator_width};
+  padding: 1em;
+  border-radius: #{$offline_indicator_rounding};
+  background-color: #{$offline_indicator_background_color};
+  color: #{$offline_indicator_text_color};
+  border: 1px solid #{$offline_indicator_border_color};
+  z-index: z("header") - 10;
+  span:first-child {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25em;
+  }
+  body.offline & {
+    display: block;
+  }
+  .mobile-view & {
+    width: calc(100vw - 4em);
+    bottom: 1em;
+  }
+}

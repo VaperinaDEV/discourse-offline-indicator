@@ -1,0 +1,4 @@
+en: 
+  offline:
+    title: "Oops...You're offline! 😦"
+    description: "Until the connection is restored, you will be browsing the cached version. Please check your internet connection..."

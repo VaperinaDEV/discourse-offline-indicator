@@ -1,0 +1,15 @@
+offline_indicator_background_color:
+  type: string
+  default: "var(--danger-low)"
+offline_indicator_text_color:
+  type: string
+  default: "var(--danger-hover)"
+offline_indicator_border_color:
+  type: string
+  default: "var(--danger-hover)"
+offline_indicator_width:
+  type: string
+  default: "300px"
+offline_indicator_rounding:
+  type: string
+  default: "0px"
