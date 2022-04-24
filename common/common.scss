@@ -1,16 +1,19 @@
 .offline-indicator {
   display: none;
-  position: fixed;
+  position: sticky;
+  position: -webkit-sticky;
   right: 1em;
   bottom: 1em;
   text-align: center;
   width: #{$offline_indicator_width};
-  padding: 1em;
   border-radius: #{$offline_indicator_rounding};
   background-color: #{$offline_indicator_background_color};
   color: #{$offline_indicator_text_color};
   border: 1px solid #{$offline_indicator_border_color};
   z-index: z("header") - 10;
+  .offline-content {
+    padding: 1em;
+  }
   span:first-child {
     font-weight: 600;
     display: block;
@@ -20,7 +23,9 @@
     display: block;
   }
   .mobile-view & {
-    width: calc(100vw - 4em);
+    width: calc(100% - 20px);
+    right: unset;
     bottom: 1em;
+    margin: auto;
   }
 }
