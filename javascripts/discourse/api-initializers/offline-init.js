@@ -1,15 +1,13 @@
-export default {
-  name: "offline-indicator",
-  initialize() {
-    window.addEventListener('online',  updateOnlineStatus);
-    window.addEventListener('offline',  updateOnlineStatus);
+import { apiInitializer } from "discourse/lib/api";
 
-    function updateOnlineStatus(event) {
-      if (!navigator.onLine) {
-        document.body.classList.add("offline");
-      } else {
-        document.body.classList.remove("offline");
-      }
-    }
-  },
-};
+export default apiInitializer(() => {
+  const updateOnlineStatus = () => {
+    document.body.classList.toggle("offline", !navigator.onLine);
+  };
+
+  // set the initial state in case the app boots while already offline
+  updateOnlineStatus();
+
+  window.addEventListener("online", updateOnlineStatus);
+  window.addEventListener("offline", updateOnlineStatus);
+});
